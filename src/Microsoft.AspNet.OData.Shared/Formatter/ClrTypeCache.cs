@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.OData.Edm;
 
 namespace Microsoft.AspNet.OData.Formatter
@@ -67,7 +68,7 @@ namespace Microsoft.AspNet.OData.Formatter
 
             public int GetHashCode(EdmTypeCacheItem obj)
             {
-                string combined = $"{obj.EdmType.FullTypeName()}~{obj.Nullable}";
+                string combined = string.Format(CultureInfo.InvariantCulture, "{0}~{1}", obj.EdmType.FullTypeName(), obj.Nullable);
                 return combined.GetHashCode();
             }
         }

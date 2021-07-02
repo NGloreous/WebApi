@@ -11,7 +11,7 @@ namespace Microsoft.AspNet.OData.Common
     /// </summary>
     internal static class TaskHelpers
     {
-#if NETFX // These are only used in the AspNet version.
+//#if NETFX // These are only used in the AspNet version.
         private static readonly Task _defaultCompleted = Task.FromResult<AsyncVoid>(default(AsyncVoid));
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace Microsoft.AspNet.OData.Common
         {
             return CancelCache<AsyncVoid>.Canceled;
         }
-#endif
+//#endif
 
         /// <summary>
         /// Returns a completed task that has no result. 
@@ -62,7 +62,7 @@ namespace Microsoft.AspNet.OData.Common
 #endif
         }
 
-#if NETFX // These are only used in the AspNet version.
+//#if NETFX // These are only used in the AspNet version.
         /// <summary>
         /// Used as the T in a "conversion" of a Task into a Task{T}
         /// </summary>
@@ -84,6 +84,6 @@ namespace Microsoft.AspNet.OData.Common
                 return tcs.Task;
             }
         }
-#endif
+//#endif
     }
 }
